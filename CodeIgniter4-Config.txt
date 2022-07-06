@@ -1,0 +1,37 @@
+Projeto Food-Delivery 
+
+(CMD)
+- cd \xampp\htdocs\food
+
+(Ferramenta)
+- https://codeigniter.com/ (Vers. 4)
+- https://www.apachefriends.org/ (Vers. 7.4.29)
+- https://code.visualstudio.com/Download
+
+(Config php)
+- php.ini  (remover o ; do extension=intl)
+- Adicionar nas Variaveis de Ambiente (C:\xampp\php)
+- Renomear o arquivo env -> .env
+- Definir a baseURL
+- Comentar # CI_ENVIRONMENT = production
+- Deixar ativo CI_ENVIRONMENT = development
+
+(Iniciar o Server pelo CMD)
+- php spark serve
+- php spark make:controller Testes (Criar um controller)
+- php spark migrate (Conectar nosso banco)
+- php spark make:migration cria_tabela_usuarios (Criar uma tabela)
+- php spark migrate:rollback (Remove a migration criada)
+- php spark make:model UsuarioModel (Criar um model)
+- php spark make:seeder UsuarioSeeder (Para inserir dados)
+- php spark db:seed UsuarioSeeder (Debug)
+
+(Adicionar uma coluna)
+- php spark make:migration adiciona_coluna_ativo_para_usuarios
+- php spark make:migration adiciona_coluna_cpf_para_usuarios 
+
+(Preparar area restrita)
+- php spark make:controller Admin/Home (Creiamo home controller e view)
+- https://github.com/BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template#:~:text=Majestic%20Admin%20is%20a%20simple,different%20types%20of%20admin%20websites.
+  (Template)
+- Remover o index from Config->App-> $indexPage
