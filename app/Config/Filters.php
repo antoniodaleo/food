@@ -21,8 +21,10 @@ class Filters extends BaseConfig
         'csrf'          => CSRF::class,
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class,
+        'login'         => \App\Filters\LoginFilter::class,  //Filtro de Login
+        'admin'         => \App\Filters\AdminFilter::class,  //Filtro de Login
+      
+
     ];
 
     /**
@@ -64,5 +66,19 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [];
+    public $filters = [
+        'login' => [
+            
+            'before' => [
+                'admin/*', // Todos controll. que estao dentro do namespace admin serao acessados apos o login
+            ]
+        ],
+        'admin' => [
+            
+            'before' => [
+                'admin/*', // Todos controll. que estao dentro do namespace admin serao acessados por um administrador
+            
+            ]
+        ],
+    ];
 }

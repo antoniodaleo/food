@@ -1,0 +1,14 @@
+CRITICAL - 2022-07-09 08:20:51 --> Too few arguments to function App\Controllers\Login::logout(), 0 passed in C:\xampp\htdocs\food\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Login->logout()
+#1 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-09 08:21:48 --> Too few arguments to function App\Controllers\Login::logout(), 0 passed in C:\xampp\htdocs\food\system\CodeIgniter.php on line 832 and exactly 1 expected
+#0 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Login->logout()
+#1 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#2 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
