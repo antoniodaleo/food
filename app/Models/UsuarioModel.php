@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+
+use App\Libraries\Token; 
 use CodeIgniter\Model;
 
 class UsuarioModel extends Model
@@ -9,7 +11,7 @@ class UsuarioModel extends Model
     
     protected $table            = 'usuarios';
     protected $returnType       = 'App\Entities\Usuario'; /* Prima era um Objet */
-    protected $allowedFields    = ['nome','email','telefone'];
+    protected $allowedFields    = ['nome','email', 'cpf','telefone','password' , 'reset_hash', 'reset_expira_em' ];
     //Datas------------------------------------------------------------------------ 
     protected $useTimestamps = true;
     protected $createdField  = 'criado_em';
@@ -82,6 +84,7 @@ class UsuarioModel extends Model
 
         return $this->select('id, nome')
                 ->like('nome', $term)
+                ->withDeleted(true)
                 ->get() 
                 ->getResult(); 
 
@@ -112,6 +115,28 @@ class UsuarioModel extends Model
     public function buscaUsuarioPorEmail(string $email){
         return $this->where('email', $email)->first(); 
 
+
+    }
+
+    public function buscaUsuarioParaResetarSenha(string $token){
+
+        $token = new Token($token); 
+
+        $tokenHash = $token->getHash(); 
+        $usuario = $this->where('reset_hash', $tokenHash)->first();
+
+        if($usuario != null){
+
+            if($usuario->reset_expira_em < date('Y-m-d H:i:s')){
+
+                /* Token expirado */
+                $usuario = null; 
+
+            }
+
+            return $usuario; 
+
+        }
 
     }
 

@@ -173,23 +173,20 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="<?php echo site_url('admin/home') ?>">
               <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
-              <i class="menu-arrow"></i>
+            <a class="nav-link"  href="<?php echo site_url('admin/categorias') ?>"  >
+              <i class="mdi mdi-box-shadow menu-icon"></i>
+              <span class="menu-title">Categorias</span>    
             </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-              </ul>
-            </div>
+            <a class="nav-link"  href="<?php echo site_url('admin/usuarios') ?>" aria-expanded="false" aria-controls="ui-basic">
+              <i class="mdi mdi-account-settings menu-icon"></i>
+              <span class="menu-title">Usuarios</span>    
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/forms/basic_elements.html">

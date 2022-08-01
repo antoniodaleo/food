@@ -38,6 +38,11 @@ class Usuarios extends BaseController
     }
 
     public function procurar(){
+
+
+        echo '<pre>';
+        print_r($this->request->getGet()); //Get -> mais detalhes
+        exit;
         
         if(!$this->request->isAJAX()){
 
@@ -49,6 +54,9 @@ class Usuarios extends BaseController
         $usuarios = $this->usuarioModel->procurar($this->request->getGet('term')); 
         $retorno = []; 
 
+       
+        
+
         foreach($usuarios as $usuario){
             $data['id']= $usuario->id; 
             $data['value']= $usuario->nome;
@@ -59,11 +67,7 @@ class Usuarios extends BaseController
 
         return $this->response->setJSON($retorno); 
 
-        /* 
-        echo '<pre>';
-        print_r($this->request->getGet()); //Get -> mais detalhes
-        exit;
-        */ 
+         
     }
 
     public function criar(){
@@ -259,7 +263,7 @@ class Usuarios extends BaseController
         return view('Admin/Usuarios/editar', $data); 
     }
 
-
+    
 
     
 

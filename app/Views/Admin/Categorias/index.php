@@ -12,21 +12,18 @@
 
 
 
-
 <?php echo  $this->section('conteudo'); ?>
   <div class="row">         
     <div class="col-lg-12 grid-margin stretch-card">
       <div class="card">
         <div class="card-body">
           <h4 class="card-title"><?php echo $titulo; ?></h4>
-
-
-            <a href="<?php echo site_url("admin/usuarios/criar"); ?>" class="btn btn-success btn-sm mb-2" title="Cadastrar"> 
+            <a href="<?php echo site_url("admin/categorias/criar"); ?>" class="btn btn-success btn-sm mb-2" title="Cadastrar"> 
               <i class="mdi mdi-plus btn-icon-prepend"></i>  
             </a>
 
             <div class="ui-widget">
-              <input id="query" name="query" placeholder="Pesquise por um usuario" class="form-control bg-light mb-5">
+              <input id="query" name="query" placeholder="Pesquise por uma categorias" class="form-control bg-light mb-5">
             </div>
 
             
@@ -39,28 +36,26 @@
                 <thead>
                   <tr>
                     <th>Nome</th>
-                    <th>E-Mail</th>
-                    <th>Cpf</th>
+                    <th>Data de criação</th>
                     <th>Ativo</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php foreach($usuarios as $usuario): ?>
+                  <?php foreach($categorias as $categoria): ?>
                   <tr>
                    
                     <td>
-                      <a href="<?php echo site_url("admin/usuarios/show/$usuario->id"); ?> "><?php echo $usuario->nome; ?></a>
+                      <a href="<?php echo site_url("admin/categorias/show/$categoria->id"); ?> "><?php echo $categoria->nome; ?></a>
                     </td>
-                    <td><?php echo $usuario->email; ?></td>
-                    <td><?php echo $usuario->cpf; ?></td>  
+                    <td><?php echo $categoria->criado_em->humanize(); ?></td>
                     
-                    <td><?php echo ($usuario->ativo && $usuario->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>'); ?></td>
+                    <td><?php echo ($categoria->ativo && $categoria->deletado_em == null ? '<label class="badge badge-primary">Sim</label>' : '<label class="badge badge-danger">Não</label>'); ?></td>
 
                     <td>
-                      <?php echo ($usuario->deletado_em == null ? '<label class="badge badge-primary">Disponivel</label>' : '<label class="badge badge-danger">Excluido</label>'); ?>
+                      <?php echo ($categoria->deletado_em == null ? '<label class="badge badge-primary">Disponivel</label>' : '<label class="badge badge-danger">Excluido</label>'); ?>
                       
-                      <?php if($usuario->deletado_em != null): ?>
-                        <a href="<?php echo site_url("admin/usuarios/desfazerexclusao/$usuario->id"); ?>" class="badge badge-danger ml-2" title="Desfaser"> 
+                      <?php if($categoria->deletado_em != null): ?>
+                        <a href="<?php echo site_url("admin/categorias/desfazerexclusao/$categoria->id"); ?>" class="badge badge-danger ml-2" title="Desfaser"> 
                           <i class="mdi mdi-undo btn-icon-prepend"></i>  
                         </a>
                       <?php endif; ?>
@@ -91,15 +86,14 @@
 <?php echo  $this->section('scripts'); ?> 
   <!-- Aqui enviamos os scripts do template principal -->
   <script src="<?php echo site_url('admin/vendors/auto-complete/jquery-ui.js') ?>">  </script>
-  
+
   <script>
-    $(function(){
+    $(function (){
 
       $("#query").autocomplete({
         source: function(request, response){
-
           $.ajax({
-            url: "<?php echo site_url('admin/usuarios/procurar');  ?>", 
+            url: "<?php echo site_url('admin/categorias/procurar');  ?>", 
             dataType: "json", 
             data:{
               term: request.term
@@ -111,7 +105,7 @@
 
                      var data =  [
                        {
-                         label: 'Usuario não encontrado', 
+                         label: 'Categoria não encontrado', 
                          value: -1
                        }
 
@@ -134,7 +128,7 @@
 
           } else{ 
 
-              window.location.href = '<?php echo site_url('admin/usuarios/show/'); ?>' + ui.item.id; 
+              window.location.href = '<?php echo site_url('admin/categorias/show/'); ?>' + ui.item.id; 
 
           }
 

@@ -22,8 +22,10 @@ class Filters extends BaseConfig
         'toolbar'       => DebugToolbar::class,
         'honeypot'      => Honeypot::class,
         'login'         => \App\Filters\LoginFilter::class,  //Filtro de Login
-        'admin'         => \App\Filters\AdminFilter::class,  //Filtro de Login
-      
+        'admin'         => \App\Filters\AdminFilter::class,  //Filtro de Admin
+        'visitante'    => \App\Filters\VisitanteFilter::class,  //Filtro de Visitante
+        'throttle'     => \App\Filters\ThrottleFilter::class,  //Filtro que ajuda a prevenire ataques força brutas
+
 
     ];
 
@@ -55,7 +57,9 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $methods = [];
+    public $methods = [
+        'post' => ['throttle'],
+    ];
 
     /**
      * List of filter aliases that should run on any

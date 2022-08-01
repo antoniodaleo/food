@@ -1,0 +1,99 @@
+ERROR - 2022-07-26 16:13:23 --> Error connecting to the database: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+CRITICAL - 2022-07-26 16:13:23 --> Unable to connect to the database.
+Main connection [MySQLi]: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+#0 C:\xampp\htdocs\food\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\food\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\food\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\food\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\food\app\Models\UsuarioModel.php(113): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\food\app\Controllers\Password.php(33): App\Models\UsuarioModel->buscaUsuarioPorEmail('lety@let.com')
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Password->processaEsqueci()
+#7 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Password))
+#8 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-07-26 20:38:50 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-26 20:47:31 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-26 20:47:32 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-26 20:47:32 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-26 20:51:20 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-07-26 20:52:05 --> Undefined property: App\Controllers\Admin\Categorias::$load
+#0 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#2 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#3 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-07-26 20:53:05 --> Undefined property: App\Controllers\Admin\Categorias::$load
+#0 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 27, Array)
+#1 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#2 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#3 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-07-26 20:53:11 --> Call to a member function humanize() on string
+#0 C:\xampp\htdocs\food\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\food\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\food\system\Common.php(1089): CodeIgniter\View\View->render('Admin/Categoria...', Array, true)
+#3 C:\xampp\htdocs\food\app\Controllers\Admin\Categorias.php(28): view('Admin/Categoria...', Array)
+#4 C:\xampp\htdocs\food\system\CodeIgniter.php(832): App\Controllers\Admin\Categorias->index()
+#5 C:\xampp\htdocs\food\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Categorias))
+#6 C:\xampp\htdocs\food\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\food\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\food\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}

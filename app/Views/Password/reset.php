@@ -1,6 +1,5 @@
 <?php  echo $this->extend('Admin/layout/principal_autenticacao'); ?>
 
-<?php echo  $this->section('titulo'); ?> <?php echo  $titulo; ?><?php echo  $this->endSection(); ?>
 
 
 
@@ -66,42 +65,36 @@
 
               <?php endif; ?>
 
-
-
-
               <div class="brand-logo">
                 <img src="<?php echo site_url('admin/images/logo.svg')?>" alt="logo">
               </div>
-              <h4>Olá , seja bem vindo(a)!</h4>
-              <h6 class="font-weight-light mb-3">Por favor realize o Login.</h6>
+              <h4>Esqueci a minha senha</h4>
+              <h6 class="font-weight-light mb-3"></h6>
 
+              <?php if(session()->has('errors_model')): ?>
+                <ul>
+                  <?php  foreach(session('errors_model') as $error  ): ?>
 
-              <?php echo form_open('login/criar'); ?>
+                    <li class="text-danger"> <?php echo $error;  ?> </li>
+                  
+                  <?php endforeach;  ?>
+                </ul>
+              <?php endif; ?>
 
+              <?php echo form_open("password/processareset/$token"); ?>
 
                 <div class="form-group">
-                  <input type="email" name="email" value="<?php echo old('email'); ?>" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Digite o seu e-mail">
+                  <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Nova senha">
                 </div>
+
                 <div class="form-group">
-                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Digite a sua senha">
+                  <input type="password" class="form-control form-control-lg" id="password_confirmation" name="password_confirmation" placeholder="Confirmação da nova senha">
                 </div>
+
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >Entrar</button>
+                  <input type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" value="Redefinir senha" ></button>
                 </div>
-
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-          
-                  </div>
-                  <a href="<?php echo site_url('password/esqueci') ?>" class="auth-link text-black">Forgot password?</a>
-                </div>
-
-                <div class="text-center mt-4 font-weight-light">
-                  Ainda não tem uma conta? <a href="<?php echo site_url('registrar')?>" class="text-primary">Criar conta</a>
-                </div>
-
-
-
+              
               <?php echo form_close(); ?>
 
             </div>
@@ -121,7 +114,5 @@
 <?php echo  $this->section('scripts'); ?> 
   <!-- Aqui enviamos os scripts do template principal -->
 
-
-  </script>
 
 <?php echo  $this->endSection(); ?>
